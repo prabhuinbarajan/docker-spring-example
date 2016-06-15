@@ -13,6 +13,7 @@
           skip-tag: true
     builders:
       - maven-target:
+          name: maven-3.3.9
           goals: 'clean install'
     notifications:
       - http:
