@@ -17,7 +17,6 @@
     notifications:
       - http:
         url: ${ST2_NOTIFICATION_EP}
-        format: json
         event: all
         timeout: 40000
         log: -1
