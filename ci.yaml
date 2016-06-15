@@ -1,0 +1,23 @@
+- job:
+    name: sprokest
+    project-type: freestyle
+    properties:
+      - delivery-pipeline:
+          stage: 'build'
+      - github:
+         url: http://github.com/prabhuinbarajan/sprokest.git 
+    scm:
+      - git:
+          name: origin
+          url: 'http://github.com/prabhuinbarajan/sprokest.git'
+          skip-tag: true
+    builders:
+      - maven-target:
+          goals: 'clean install'
+    notifications:
+      - http:
+        url: – ${ST2_NOTIFICATION_EP}
+        format: json
+        event: all
+        timeout: 40000
+        log: -1
