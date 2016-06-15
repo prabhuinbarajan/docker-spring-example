@@ -16,7 +16,8 @@
           goals: 'clean install'
     notifications:
       - http:
-        url: ${ST2_NOTIFICATION_EP}
-        event: all
-        timeout: 40000
-        log: -1
+          url: ${ST2_NOTIFICATION_EP}
+          format: json
+          event: all
+          timeout: 40000
+          log: -1
