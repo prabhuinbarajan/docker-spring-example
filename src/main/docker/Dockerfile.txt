@@ -1,0 +1,6 @@
+FROM dockerfile/java:oracle-java8
+
+ADD sprockest.jar /opt/sprockest/
+EXPOSE 8080
+WORKDIR /opt/sprockest/
+CMD ["java", "-Xms512m", "-Xmx1g", "-jar", "sprockest.jar"]
