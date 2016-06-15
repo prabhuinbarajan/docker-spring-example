@@ -6,3 +6,6 @@ https://github.com/wouterla/workshop-docker-jenkins
 https://wiki.jenkins-ci.org/display/JENKINS/Notification+Plugin
 http://docs.openstack.org/infra/jenkins-job-builder/notifications.html
 https://github.com/openstack-infra/jenkins-job-builder/blob/5407302fdc61ab47dc075f3a7751979ef51062bc/jenkins_jobs/modules/notifications.py
+
+
+#test info.
