@@ -19,7 +19,7 @@
     builders:
       - maven-target:
           maven-version: maven-3.3.9
-          goals: 'clean install'
+          goals: 'clean install -DfailIfNoTests=false'
     notifications:
       - http:
           url: ${ST2_NOTIFICATION_EP}
