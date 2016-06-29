@@ -22,7 +22,7 @@
           goals: 'clean install -DfailIfNoTests=false'
     publishers:
       - archive:
-          artifacts: '*.tar.gz'
+          artifacts: 'target/app.zip'
           allow-empty: 'true'
           fingerprint: true
           default-excludes: false
