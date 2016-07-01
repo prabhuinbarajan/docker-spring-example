@@ -17,12 +17,13 @@
           url: 'http://github.com/prabhuinbarajan/sprokest.git'
           skip-tag: true
     builders:
-      - maven-target:
-          maven-version: maven-3.3.9
-          goals: 'clean install -DfailIfNoTests=false'
+      - shell: "./gradlew clean packDeb && ~/aptly repo add hello build/distributions/*.deb && ~/aptly publish repo -architectures="amd64" -component=main -distribution=trusty -skip-signing=true hello"
+#      - maven-target:
+#          maven-version: maven-3.3.9
+#          goals: 'clean install -DfailIfNoTests=false'
     publishers:
       - archive:
-          artifacts: 'target/app.zip'
+          artifacts: 'build/distributions/*.deb'
           allow-empty: 'true'
           fingerprint: true
           default-excludes: false

@@ -1,0 +1,62 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'nebula.ospackage-base'
+
+//plugins{
+//    id 'nebula.netflixoss' version '2.2.5'
+//    id 'nebula.provided-base' version '2.0.1'
+//}
+apply plugin: 'java'
+apply plugin: 'maven'
+group = 'com.qubeship.example'
+version = '1.0.0-SNAPSHOT'
+
+description = """Spring Boot Docker Blank Project (from https://github.com/making/spring-boot-docker-blank)"""
+
+sourceCompatibility = 1.5
+targetCompatibility = 1.5
+
+
+
+repositories {
+    mavenCentral()
+    jcenter()      
+     maven {
+//        url "https://plugins.gradle.org/m2/"
+	url "http://repo.maven.apache.org/maven2" 
+    }
+}
+
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+            url "http://repo.maven.apache.org/maven2"
+        }
+    }
+    dependencies {
+        classpath 'com.netflix.nebula:gradle-ospackage-plugin:3.1.0'
+    }
+}
+
+
+dependencies {
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version:'1.2.3.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version:'1.2.3.RELEASE'
+    testCompile(group: 'org.springframework.boot', name: 'spring-boot-starter-test', version:'1.2.3.RELEASE') {
+exclude(module: 'commons-logging')
+    }
+}
+
+task packDeb(type: Deb, dependsOn: build) {
+
+  packageName = project.name
+  version = '1'
+  release '1'
+
+  from('build/libs/.') {
+    into "/opt/${project.name}"
+  }
+
+
+}
