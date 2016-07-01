@@ -52,7 +52,7 @@ task packDeb(type: Deb, dependsOn: build) {
 
   packageName = project.name
   version = '1'
-  release '2'
+  release '3'
 
   from('build/libs/.') {
     into "/opt/${project.name}"
