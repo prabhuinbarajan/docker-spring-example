@@ -17,7 +17,7 @@
           url: 'http://github.com/prabhuinbarajan/sprokest.git'
           skip-tag: true
     builders:
-      - shell: "./gradlew clean packDeb && sudo /var/jenkins_home/aptly repo add -force-replace hello  build/distributions/*.deb && sudo /var/jenkins_home/publish_repo.sh hello amd64" 
+      - shell: "./gradlew clean packDeb && sudo /var/jenkins_home/aptly repo add -force-replace hello  build/distributions/*.deb && sudo /var/jenkins_home/publish_repo.sh hello amd64 trusty" 
       #&& sudo /var/jenkins_home/aptly publish repo -architectures=amd64 -component=main -distribution=trusty -skip-signing=true hello"
     publishers:
       - archive:
