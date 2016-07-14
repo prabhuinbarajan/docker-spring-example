@@ -2,6 +2,6 @@ steps:
   - name: Example Test
     command: echo "Hello!"
   - name: gradle build
-    command: "./gradlew clean packDeb"
+    command: "./gradlew clean packDeb && buildkite-agent artifact upload build/distributions/*.deb"
     agents:
       queue: 'docker'
