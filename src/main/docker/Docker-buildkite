@@ -1,4 +1,4 @@
-FROM dockerfile/java:oracle-java8
+FROM java:8
 RUN mkdir -p /opt/sprockest/
 ADD sprokest_*.deb .
 RUN dpkg -i sprokest_*.deb
