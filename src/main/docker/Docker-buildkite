@@ -1,6 +1,6 @@
 FROM java:8
 RUN mkdir -p /opt/sprockest/
-ADD sprokest_*.deb .
+ADD build/distributions/sprokest_*.deb .
 RUN dpkg -i sprokest_*.deb
 RUN service sprokest start
 EXPOSE 8080
