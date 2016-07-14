@@ -6,6 +6,6 @@ steps:
     agents:
       queue: 'docker'
   - name: bake
-    command: 'scripts/docker_buildkite.sh' 
+    command: 'scripts/buildkite_docker_bake.sh' 
     agents:
       queue: 'default'
