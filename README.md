@@ -11,3 +11,5 @@ https://github.com/openstack-infra/jenkins-job-builder/blob/5407302fdc61ab47dc07
 #test info.
 1
 spinnaker scratchpad
+
+integration with buildkite
