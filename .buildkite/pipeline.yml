@@ -3,3 +3,5 @@ steps:
     command: echo "Hello!"
   - name: gradle build
     command: "JAVA_HOME=/usr/lib/jvm/java-8-oracle/ ./gradlew clean packDeb"
+    agents:
+      queue: 'docker'
