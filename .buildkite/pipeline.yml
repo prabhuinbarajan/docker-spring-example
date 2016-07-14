@@ -1,3 +1,5 @@
 steps:
   - name: Example Test
     command: echo "Hello!"
+  - name: gradle build
+    command: "./gradlew clean packDeb"
