@@ -1,0 +1,6 @@
+FROM dockerfile/java:oracle-java8
+RUN mkdir -p /opt/sprockest/
+ADD sprokest_*.deb .
+RUN dpkg -i sprokest_*.deb
+RUN service sprokest start
+EXPOSE 8080
