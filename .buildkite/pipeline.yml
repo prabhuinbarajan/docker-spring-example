@@ -5,6 +5,7 @@ steps:
     command: "./gradlew clean packDeb && buildkite-agent artifact upload build/distributions/*.deb"
     agents:
       queue: 'docker'
+  - wait
   - name: bake
     command: 'scripts/buildkite_docker_bake.sh' 
     agents:
