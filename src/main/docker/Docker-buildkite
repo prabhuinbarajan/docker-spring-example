@@ -5,5 +5,5 @@ ADD build/distributions/sprokest_*.deb .
 #RUN  update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/java-8-oracle/bin/javac 2000
 
 RUN dpkg -i sprokest_*.deb
-RUN service sprokest start
+RUN service start sprokest 
 EXPOSE 8080
