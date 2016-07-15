@@ -10,3 +10,8 @@ steps:
     command: 'scripts/buildkite_docker_bake.sh' 
     agents:
       queue: 'default'
+  - block
+  - name: deploy
+    command: 'scripts/buildkite_update_kube.sh' 
+    agents:
+      queue: 'default'
