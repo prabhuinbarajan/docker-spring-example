@@ -1,10 +1,10 @@
 FROM java:7
 RUN  apt-get update
-RUN   apt-get install software-properties-common python-software-properties
+RUN   apt-get install -y software-properties-common python-software-properties
 RUN apt-get update
 RUN add-apt-repository ppa:pitti/systemd
 RUN apt-get update
-RUN apt-get install systemd libpam-systemd systemd-ui
+RUN apt-get install  -y systemd libpam-systemd systemd-ui
 RUN mkdir -p /opt/sprockest/
 ADD build/distributions/sprokest_*.deb .
 #RUN  update-alternatives --install /usr/bin/java java /usr/lib/jvm/java-8-oracle/jre/bin/java 2000
