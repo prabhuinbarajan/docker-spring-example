@@ -1,4 +1,7 @@
 FROM java:7
+RUN add-apt-repository ppa:pitti/systemd
+RUN apt-get update
+RUN apt-get install systemd libpam-systemd systemd-ui
 RUN mkdir -p /opt/sprockest/
 ADD build/distributions/sprokest_*.deb .
 #RUN  update-alternatives --install /usr/bin/java java /usr/lib/jvm/java-8-oracle/jre/bin/java 2000
