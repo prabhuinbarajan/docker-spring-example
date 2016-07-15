@@ -1,5 +1,5 @@
 FROM java:7
-RUN  apt-get install software-properties-common python3-software-properties python-software-properties
+RUN   apt-get install software-properties-common python-software-properties
 RUN apt-get update
 RUN add-apt-repository ppa:pitti/systemd
 RUN apt-get update
